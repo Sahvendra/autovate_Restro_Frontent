@@ -1,0 +1,234 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .ordersList {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .orderCard {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .orderCard:hover {
+    transform: translateY(-2px);
+  }
+  
+  .orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .orderId {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .orderDate {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .orderContent {
+    display: flex;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .orderImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .orderImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .orderDetails {
+    flex-grow: 1;
+  }
+  
+  .orderDetails h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+  }
+  
+  .orderMeta {
+    color: #666;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .orderPrice {
+    font-weight: bold;
+    color: #e63946;
+    margin: 0.5rem 0;
+  }
+  
+  .paymentStatus {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .orderStatus {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 200px;
+  }
+  
+  .statusEdit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .statusSelect {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+  }
+  
+  .editActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .saveButton, .cancelButton, .editButton {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .saveButton {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .cancelButton {
+    background: #f44336;
+    color: white;
+  }
+  
+  .editButton {
+    background: #2196f3;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .statusText {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+  }
+  
+  /* Status icons */
+  .pendingIcon {
+    color: #ff9800;
+    font-size: 1.5rem;
+  }
+  
+  .confirmedIcon {
+    color: #2196f3;
+    font-size: 1.5rem;
+  }
+  
+  .preparingIcon {
+    color: #ffc107;
+    font-size: 1.5rem;
+  }
+  
+  .deliveringIcon {
+    color: #673ab7;
+    font-size: 1.5rem;
+  }
+  
+  .deliveredIcon {
+    color: #4caf50;
+    font-size: 1.5rem;
+  }
+  
+  .cancelledIcon {
+    color: #f44336;
+    font-size: 1.5rem;
+  }
+  
+  .defaultIcon {
+    color: #9e9e9e;
+    font-size: 1.5rem;
+  }
+  
+  /* Status text colors */
+  .pending {
+    color: #ff9800;
+  }
+  
+  .confirmed {
+    color: #2196f3;
+  }
+  
+  .preparing {
+    color: #ffc107;
+  }
+  
+  .ontheway {
+    color: #673ab7;
+  }
+  
+  .delivered {
+    color: #4caf50;
+  }
+  
+  .cancelled {
+    color: #f44336;
+  }
+  
+  .loading, .error, .empty {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .error button, .empty button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

@@ -1,0 +1,250 @@
+/* .navbarContainer {
+  width: 100%;
+  height: 95px;
+  display: flex;
+  align-items: center;
+}
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+.searchBar {
+  width: 480px;
+  display: flex;
+  border: 1px solid #888;
+  padding: 12px;
+  border-radius: 22px;
+}
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  flex: 1;
+}
+.searchBar input::placeholder {
+  color: #888;
+}
+.routes {
+  display: flex;
+  width: 350px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.active{
+  border-bottom: 1px solid black;
+}
+.userProfile {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+
+
+.messageContainer h1{
+  margin-top: 23px;
+  font-size: 34px;
+  font-weight: 800;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.messageContainer p{
+  font-size: 19px;
+  color: #888;
+} */
+
+
+
+/* Navbar container styles */
+.navbarContainer {
+  width: 100%;
+  background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Main nav bar styles */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: white;
+}
+
+/* Logo styles */
+.navBar > div:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Search bar styles */
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  width: 30%;
+  min-width: 250px;
+}
+
+.searchBar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.searchBar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6e48aa;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.searchBar button:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation routes styles */
+.routes {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.routes a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.routes a:hover {
+  color: #f8d56b;
+}
+
+.routes a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f8d56b;
+  transition: width 0.3s ease;
+}
+
+.routes a:hover::after {
+  width: 100%;
+}
+
+/* User profile styles */
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userProfile p {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.userProfile p:hover {
+  color: #f8d56b;
+}
+
+
+
+.userProfile button {
+  background: white;
+  color: #6e48aa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.userProfile button:hover {
+  background: #f8d56b;
+  color: #6e48aa;
+  transform: translateY(-2px);
+}
+
+/* Welcome message container styles */
+.messageContainer {
+  background: linear-gradient(rgba(110, 72, 170, 0.9), rgba(157, 80, 187, 0.9)), 
+              url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  color: white;
+  text-align: center;
+}
+
+.messageContainer h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+.messageContainer p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .searchBar {
+    width: 100%;
+  }
+
+  .routes {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .messageContainer h1 {
+    font-size: 2rem;
+  }
+
+  .messageContainer p {
+    font-size: 1rem;
+  }
+}

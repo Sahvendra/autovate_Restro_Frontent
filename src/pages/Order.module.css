@@ -1,0 +1,436 @@
+/* Main container styles */
+.orderContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .orderTitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .orderTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+    border-radius: 2px;
+  }
+  
+  /* Order grid layout */
+  .orderGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  /* Status message animations */
+  .statusMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    animation: slideUp 0.5s ease, fadeIn 0.5s ease;
+  }
+  
+  .statusContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .statusIcon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .statusMessage h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .statusMessage p {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .success .statusIcon {
+    color: #4caf50;
+  }
+  
+  .error .statusIcon {
+    color: #e63946;
+  }
+  
+  .closeButton {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .closeButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+  }
+  
+  /* Form section styles */
+  .orderFormSection {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .sectionIcon {
+    color: #764ba2;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .formGroup textarea {
+    resize: vertical;
+  }
+  
+  .formGroup input:focus,
+  .formGroup textarea:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+  }
+  
+  .errorInput {
+    border-color: #e63946 !important;
+  }
+  
+  .errorMessage {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: block;
+  }
+  
+  /* Radio button styles */
+  .radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .radioLabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .radioCustom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .radioLabel:hover .radioCustom {
+    border-color: #764ba2;
+  }
+  
+  .radioLabel input:checked ~ .radioCustom {
+    background-color: #764ba2;
+    border-color: #764ba2;
+    box-shadow: inset 0 0 0 3px white;
+  }
+  
+  /* Submit button */
+  .submitButton {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+  }
+  
+  .submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Order summary section */
+  .orderSummarySection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .summaryCard {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .orderItems {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .orderItem {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .orderItem:last-child {
+    border-bottom: none;
+  }
+  
+  .itemImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .itemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .orderItem:hover .itemImage img {
+    transform: scale(1.1);
+  }
+  
+  .itemDetails {
+    flex: 1;
+  }
+  
+  .itemDetails h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .itemControls {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .quantityButton {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .quantityButton:hover {
+    background: #764ba2;
+    color: white;
+  }
+  
+  .itemPrice {
+    margin-left: auto;
+    font-weight: 600;
+    color: #e63946;
+  }
+  
+  .summaryDetails {
+    margin-top: 1.5rem;
+  }
+  
+  .summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    color: #555;
+  }
+  
+  .totalRow {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ddd;
+  }
+  
+  /* Empty cart styles */
+  .emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .emptyCart img {
+    width: 120px;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+  
+  .emptyCart p {
+    color: #666;
+  }
+  
+  /* Delivery info styles */
+  .deliveryInfo {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .deliveryInfo p {
+    margin-bottom: 0.8rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .deliveryInfo p::before {
+    content: '•';
+    color: #764ba2;
+    font-weight: bold;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translate(-50%, -40%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .orderGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .orderTitle {
+      font-size: 1.8rem;
+    }
+    
+    .sectionTitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .orderContainer {
+      padding: 1rem;
+    }
+    
+    .orderItem {
+      flex-direction: column;
+    }
+    
+    .itemImage {
+      width: 100%;
+      height: 150px;
+    }
+    
+    .itemControls {
+      margin-top: 0.5rem;
+    }
+  }
