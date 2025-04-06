@@ -308,7 +308,10 @@ function OrderConfirmation() {
 
 
       console.log("data is ", data);
-      const res = await axios.post("http://127.0.0.1:8000/api/orders/", data);
+      // const res = await axios.post("http://127.0.0.1:8000/api/orders/", data);
+
+
+      const res = await axios.post("https://autovate-restro-backend19.onrender.com/api/orders/", data);
 
       if (res.data) {
         setIsSubmitting(false);

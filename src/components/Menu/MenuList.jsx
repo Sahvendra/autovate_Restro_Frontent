@@ -16,7 +16,9 @@ function MenuList({ homeCategory }) {
 
   const getAllMenuListItems = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/bulk/menu-items/");
+      // const res = await axios.get("http://127.0.0.1:8000/bulk/menu-items/");
+
+      const res = await axios.get("https://autovate-restro-backend19.onrender.com/bulk/menu-items/");
       console.log("res of MenuListItems is ", res.data);
 
       if (res.data) {

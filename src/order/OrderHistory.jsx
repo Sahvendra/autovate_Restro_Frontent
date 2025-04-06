@@ -32,7 +32,10 @@ function OrderHistory() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/orders/");
+        // const response = await axios.get("http://127.0.0.1:8000/api/orders/");
+
+
+        const response = await axios.get("https://autovate-restro-backend19.onrender.com/api/orders/");
         setOrders(response.data);
       } catch (err) {
         console.error("Error fetching orders:", err);

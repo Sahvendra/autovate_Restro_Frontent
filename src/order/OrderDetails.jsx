@@ -322,7 +322,10 @@ function OrderDetails() {
 
     const fetchOrdersData = async () => {
         try {
-            const res = await axios.get("http://127.0.0.1:8000/api/orders/");
+            // const res = await axios.get("http://127.0.0.1:8000/api/orders/");
+
+
+            const res = await axios.get("https://autovate-restro-backend19.onrender.com/api/orders/");
             setOrders(res.data);
             setLoading(false);
         } catch (error) {
@@ -337,9 +340,9 @@ function OrderDetails() {
     }, []);
 
     const formatDate = (dateString) => {
-        const options = { 
-            year: 'numeric', 
-            month: 'long', 
+        const options = {
+            year: 'numeric',
+            month: 'long',
             day: 'numeric',
             hour: '2-digit',
             minute: '2-digit'
@@ -358,13 +361,13 @@ function OrderDetails() {
 
     if (error) {
         return (
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className={styles.error}
             >
                 {error}
-                <button 
+                <button
                     onClick={fetchOrdersData}
                     className={styles.retryButton}
                 >
@@ -376,7 +379,7 @@ function OrderDetails() {
 
     return (
         <div className={styles.container}>
-            <motion.div 
+            <motion.div
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4 }}
@@ -388,24 +391,23 @@ function OrderDetails() {
 
             <div className={styles.ordersGrid}>
                 {orders.map((order, index) => (
-                    <motion.div 
+                    <motion.div
                         key={order.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: index * 0.05 }}
                         className={styles.orderCard}
-                        whileHover={{ 
+                        whileHover={{
                             y: -5,
                             boxShadow: "0 10px 25px rgba(0,0,0,0.08)"
                         }}
                     >
                         <div className={styles.orderHeader}>
                             <span className={styles.orderId}>Order #{order.id}</span>
-                            <span className={`${styles.orderStatus} ${
-                                order.status === 'pending' ? styles.statusPending : 
+                            <span className={`${styles.orderStatus} ${order.status === 'pending' ? styles.statusPending :
                                 order.status === 'delivered' ? styles.statusDelivered :
-                                styles.statusOther
-                            }`}>
+                                    styles.statusOther
+                                }`}>
                                 {order.status}
                             </span>
                         </div>
@@ -449,22 +451,21 @@ function OrderDetails() {
 
                                 <div className={styles.detailRow}>
                                     <span className={styles.detailLabel}>Payment:</span>
-                                    <span className={`${styles.paymentStatus} ${
-                                        order.payment_status ? styles.paymentPaid : styles.paymentUnpaid
-                                    }`}>
+                                    <span className={`${styles.paymentStatus} ${order.payment_status ? styles.paymentPaid : styles.paymentUnpaid
+                                        }`}>
                                         {order.payment_status ? 'Paid' : 'Unpaid'}
                                     </span>
                                 </div>
                             </div>
 
                             {order.image && (
-                                <motion.div 
+                                <motion.div
                                     className={styles.imageContainer}
                                     whileHover={{ scale: 1.02 }}
                                 >
-                                    <img 
-                                        src={order.image} 
-                                        alt={`Order ${order.id}`} 
+                                    <img
+                                        src={order.image}
+                                        alt={`Order ${order.id}`}
                                         className={styles.orderImage}
                                         loading="lazy"
                                     />
