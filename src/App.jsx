@@ -100,10 +100,10 @@ function App() {
         />
 
 
-<Route path="/order-history" element={<OrderHistory />} />
+        <Route path="/order-history" element={<OrderHistory />} />
 
 
-<Route path="/order-detail" element={<OrderDetails />} />
+        <Route path="/order-detail" element={<OrderDetails />} />
       </Routes>
     </StoreContext.Provider>
   );

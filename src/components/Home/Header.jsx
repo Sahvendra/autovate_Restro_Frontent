@@ -29,6 +29,7 @@ function Header() {
                         <Link to="/cart">Cart</Link>
                         <Link to="/order">Order</Link>
                         <Link to="/history">History</Link>
+                        <Link to="/order-detail">Admin Order Detail</Link>
                     </div>
                     {/* <div className={styles.userProfile}>
 
